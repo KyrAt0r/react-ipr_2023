@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from './components/Routes';
+import Header from "./components/Header/Header";
+import MainMenu from "./components/MainMenu/MainMenu";
+import Footer from "./components/Footer/Footer";
+import logo from './assets/logoMimic.gif';
+import Home from "./Pages/Home/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let menuItems = [ // Обёрнуто в JSON обьект для передачи в пропсыы
+        { title: 'Новости', link: '/news', id: '0' },
+        { title: 'О нас', link: '/about', id: '1' },
+        { title: 'Контакты', link: '/contacts', id: '2' },
+    ];
+
+    return (
+        <Router>
+            <div className="App">
+                <Header logoSrc={logo} siteName="ИПР React + TypeScript" />
+                <MainMenu menuItems={menuItems} />
+                <Home/>
+                <Routes/>
+                <Footer/>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
