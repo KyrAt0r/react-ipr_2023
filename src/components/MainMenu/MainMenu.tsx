@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MainMenu.css';
+import {NavLink} from "react-router-dom";
 
 interface MenuItem {
     title: string;
@@ -20,9 +21,7 @@ class MainMenu extends Component<MenuProps> {
                 <ul className="menu__list">
                     {menuItems.map(item => (
                         <li key={item.id} className="menu__item">
-                            <a href={item.link} className="menu__link">
-                                {item.title}
-                            </a>
+                            <NavLink exact to={item.link} className="menu__link" activeClassName="active">{item.title}</NavLink>
                         </li>
                     ))}
                 </ul>

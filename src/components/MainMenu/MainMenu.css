@@ -26,3 +26,8 @@
 .menu__link:hover {
     color: #007bff;
 }
+
+.active {
+    color: #005ac0;
+    font-weight: bold;
+}

@@ -5,7 +5,6 @@ import Content from "../../components/Content/Content";
 function Home() {
     return (
         <div className="home">
-            {/*<h1 className="inWork">В разработке</h1>*/}
             <Content/>
         </div>
     );

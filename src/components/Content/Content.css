@@ -1,0 +1,16 @@
+.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rating i {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.rating i.far {
+    color: #c4c4c4;
+}

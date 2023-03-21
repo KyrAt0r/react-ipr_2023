@@ -17,7 +17,7 @@ class Header extends Component<HeaderProps> {
                     <img src={logoSrc} alt="Logo" className="header__logo"/>
                 </a>
                 <h1 className="header__site-name">{siteName}</h1>
-                <UserInfo isLoggedIn={true} />
+                <UserInfo/>
             </header>
         );
     }
