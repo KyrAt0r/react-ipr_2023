@@ -3,9 +3,20 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    gap: 50px;
 }
 
 .inWork {
     font-size: 3rem;
     text-align: center;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.right-column {
+
 }
