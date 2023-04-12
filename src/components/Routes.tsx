@@ -4,6 +4,7 @@ import FunctionalComponent from './FunctionalComponent/FunctionalComponent';
 import ClassComponent from './ClassComponent/ClassComponent';
 import Authorization from "./Authorization/Authorization";
 import Home from "../Pages/Home/Home";
+import Posts from "./Posts/Posts";
 
 const Routes = () => {
     return (
@@ -12,6 +13,7 @@ const Routes = () => {
             <Route exact path="/functional" component={FunctionalComponent} />
             <Route exact path="/class" component={ClassComponent} />
             <Route exact path="/login" component={Authorization}/>
+            <Route exact path="/feed" component={Posts}/>
         </Switch>
     );
 };

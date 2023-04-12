@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {IPost} from "../../interface/IPost";
 
-type Post = {
-    id: number;
-    title: string;
-    body: string;
-};
 
 function DummyPosts() {
     const [posts, setPosts] = useState([]);
@@ -33,7 +29,7 @@ function DummyPosts() {
                 height: '800px',
                 overflow: 'auto'
             }}>
-                {posts.slice(0, displayedPostsCount).map((post: Post) => (
+                {posts.slice(0, displayedPostsCount).map((post: IPost) => (
                     <div key={post.id} className="dummy-posts__post">
                         <h3>{post.title}</h3>
                         <p>{post.body}</p>

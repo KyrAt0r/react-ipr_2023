@@ -1,4 +1,4 @@
-.my-button {
+button {
     background-color: #0084ff;
     color: #fff;
     padding: 8px 16px;
@@ -9,17 +9,38 @@
     transition: background-color 0.2ms ease-in-out;
 }
 
-.my-button:hover {
+button:hover {
     background-color: #0069d9;
 }
 
-.my-button:active {
+button:active {
     background-color: #005cbf;
     outline: none;
     box-shadow: -2px 1px 4px rgba(0, 0, 0, 0.3);
     transition: background-color 0.2ms ease-in-out, box-shadow 0.2ms ease-in-out;
 }
 
+.my-button-warning {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin: 2px;
+    transition: background-color 0.2ms ease-in-out;
+}
+
+.my-button-warning:hover {
+    background-color: #ce1919;
+}
+
+.my-button-warning:active {
+    background-color: #ad0000;
+    outline: none;
+    box-shadow: -2px 1px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2ms ease-in-out, box-shadow 0.2ms ease-in-out;
+}
 
 .card {
     background-color: #fff;
@@ -112,14 +133,19 @@
     transition: border-color 0.2s ease-in-out;
 }
 
+.input-field:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
 .input-field--error {
     border: 1px solid #dc3545;
     color: #dc3545;
 }
 
-.input-field:focus {
+.input-field--error:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #dc3545;
 }
 
 .input-error {

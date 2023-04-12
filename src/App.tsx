@@ -14,6 +14,7 @@ function App() {
         {title: 'Новости', link: '/news', id: '1'},
         {title: 'О нас', link: '/about', id: '2'},
         {title: 'Контакты', link: '/functional', id: '3'},
+        {title: 'Посты', link: '/feed', id: '4'},
     ];
 
     return (

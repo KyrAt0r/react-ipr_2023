@@ -1,0 +1,36 @@
+.add-post-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    min-width: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+.add-post-modal form {
+    margin: 10px;
+
+}
+
+.add-post-modal input,
+.add-post-modal textarea {
+    display: flex;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+}
+
+.add-post-modal textarea {
+    resize: none;
+    min-height: 200px;
+    max-height: 300px;
+}
