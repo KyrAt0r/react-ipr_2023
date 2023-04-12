@@ -37,12 +37,10 @@ function Posts() {
         setPosts((prevPosts) =>
             prevPosts.map((post) => (post.id === id ? {id, title, body} : post))
         );
-        setSelectedPost(null);
     }
 
     const deletePost = (id: number) => {
         setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id));
-        setSelectedPost(null);
     }
 
     useEffect(() => {
@@ -77,7 +75,7 @@ function Posts() {
                     height: '800px',
                     overflow: 'auto'
                 }}>
-                    {posts.map((post) => (
+                    {posts.slice(0, displayedPostsCount).map((post: IPost) => (
                         <div key={post.id}>
                             <h3>{post.title}</h3>
                             <button onClick={() => {
