@@ -5,6 +5,7 @@ import ViewPostModal from "../PostModal/ViewPostModal";
 import EditPostModal from "../PostModal/EditPostModal";
 import ConfirmDeleteModal from "../PostModal/ConfirmDeleteModal";
 import {IPost} from "../../interface/IPost"
+import "./Posts.css";
 
 function Posts() {
     const [posts, setPosts] = useState<IPost[]>([]);
@@ -60,68 +61,70 @@ function Posts() {
     };
 
     return (
-        <>
-            <button
-                className="my-button"
-                onClick={() =>  {
-                    setModalIsOpen(true)
-                }}
-            >
-                Добавить пост
-            </button>
-            <AddPostModal isOpen={modalIsOpen} onClose={closeModal} onAdd={addPost}/>
-            <div style={{
-                width: '800px',
-                height: '800px',
-                overflow: 'auto'
-            }}>
-                {posts.map((post) => (
-                    <div key={post.id}>
-                        <h3>{post.title}</h3>
-                        <button onClick={() => {
-                            setSelectedPost(post);
-                            setViewModalIsOpen(true);
-                        }}>View</button>
-                        <button onClick={() => {
-                            setSelectedPost(post);
-                            setEditModalIsOpen(true);
-                        }}>Edit</button>
-                        <button className="my-button-warning" onClick={() => {
-                            setSelectedPost(post);
-                            setDeleteModalIsOpen(true);
-                        }}>Delete</button>
-                    </div>
-                ))}
-            </div>
-            {displayedPostsCount < posts.length && (
-                <button className="my-button" onClick={handleShowMoreClick}>
-                    Показать еще
+        <div className="posts-wrapper">
+            <div className="posts-cont">
+                <button
+                    className="my-button"
+                    onClick={() =>  {
+                        setModalIsOpen(true)
+                    }}
+                >
+                    Добавить пост
                 </button>
-            )}
-            {
-                selectedPost && (
-                    <>
-                        <ViewPostModal
-                            isOpen={viewModalIsOpen}
-                            onClose={closeModal}
-                            post={selectedPost}
-                        />
-                        <EditPostModal
-                            isOpen={editModalIsOpen}
-                            onClose={closeModal}
-                            post={selectedPost}
-                            onSave={savePost}
-                        />
-                        <ConfirmDeleteModal
-                            isOpen={deleteModalIsOpen}
-                            onClose={closeModal}
-                            post={selectedPost}
-                            onDelete={deletePost}
-                        />
-                    </>
-                )
-            }
-        </>
+                <AddPostModal isOpen={modalIsOpen} onClose={closeModal} onAdd={addPost}/>
+                <div style={{
+                    width: '800px',
+                    height: '800px',
+                    overflow: 'auto'
+                }}>
+                    {posts.map((post) => (
+                        <div key={post.id}>
+                            <h3>{post.title}</h3>
+                            <button onClick={() => {
+                                setSelectedPost(post);
+                                setViewModalIsOpen(true);
+                            }}>View</button>
+                            <button onClick={() => {
+                                setSelectedPost(post);
+                                setEditModalIsOpen(true);
+                            }}>Edit</button>
+                            <button className="my-button-warning" onClick={() => {
+                                setSelectedPost(post);
+                                setDeleteModalIsOpen(true);
+                            }}>Delete</button>
+                        </div>
+                    ))}
+                </div>
+                {displayedPostsCount < posts.length && (
+                    <button className="my-button" onClick={handleShowMoreClick}>
+                        Показать еще
+                    </button>
+                )}
+                {
+                    selectedPost && (
+                        <>
+                            <ViewPostModal
+                                isOpen={viewModalIsOpen}
+                                onClose={closeModal}
+                                post={selectedPost}
+                            />
+                            <EditPostModal
+                                isOpen={editModalIsOpen}
+                                onClose={closeModal}
+                                post={selectedPost}
+                                onSave={savePost}
+                            />
+                            <ConfirmDeleteModal
+                                isOpen={deleteModalIsOpen}
+                                onClose={closeModal}
+                                post={selectedPost}
+                                onDelete={deletePost}
+                            />
+                        </>
+                    )
+                }
+            </div>
+        </div>
     );
 }
 
