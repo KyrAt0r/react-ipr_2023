@@ -3,6 +3,7 @@ import './Content.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as lightStar } from '@fortawesome/free-regular-svg-icons';
+import {IBreadcrumbsProps} from "../../interface/IBreadcrumbsProps";
 
 interface ButtonProps {
     text: string;
@@ -34,17 +35,9 @@ const Card = ({imageUrl, text}: CardProps) => (
     </div>
 );
 
-interface breadcrumbsItems {
-    title: string;
-    link: string;
-    id: string;
-}
 
-interface BreadcrumbsProps {
-    breadcrumbsItems: breadcrumbsItems[];
-}
 
-const Breadcrumbs = ({breadcrumbsItems}: BreadcrumbsProps) => (
+const Breadcrumbs = ({breadcrumbsItems}: IBreadcrumbsProps) => (
     <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
             {breadcrumbsItems.map(item => (
@@ -65,7 +58,7 @@ const Rating = ({maxStars, selectedStars}: RatingProps) => {
         stars.push(<FontAwesomeIcon size={"2x"} key={i} icon={i <= selectedStars ? solidStar : lightStar} style={{color: 'gold'}} />);
     }
     return (
-        <div className="rating">{stars}</div>
+        <div className="rating"> { stars } </div>
     );
 }
 

@@ -1,20 +1,11 @@
 import Modal from "react-modal";
-import React, {useState} from "react";
+import React from "react";
 import "./PostModal.css";
-import {IPost} from "../../interface/IPost";
+import {IConfirmDeleteModalProps} from "../../interface/IConfirmDeleteModalProps";
 
-interface ConfirmDeleteModalProps {
-    post: IPost;
-    isOpen: boolean;
-    onClose: () => void;
-    onDelete: (id: number) => void;
-}
-
-function ConfirmDeleteModal({ post, isOpen, onClose, onDelete }: ConfirmDeleteModalProps) {
-    const [id, setId] = useState(post.id);
-
+function ConfirmDeleteModal({ post, isOpen, onClose, onDelete }: IConfirmDeleteModalProps) {
     const onDeletePost = () => {
-        onDelete(id);
+        onDelete(post.id);
         onClose();
     };
 

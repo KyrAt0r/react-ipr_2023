@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import './MainMenu.css';
 import {NavLink} from "react-router-dom";
+import {IMenuProps} from "../../interface/IMenuProps";
 
-interface MenuItem {
-    title: string;
-    link: string;
-    id: string;
-}
-
-interface MenuProps {
-    menuItems: MenuItem[];
-}
-
-class MainMenu extends Component<MenuProps> {
+class MainMenu extends Component<IMenuProps> {
     render() {
         const { menuItems } = this.props;
 

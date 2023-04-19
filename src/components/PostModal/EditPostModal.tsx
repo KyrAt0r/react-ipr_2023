@@ -1,17 +1,9 @@
 import React, {useState} from "react";
 import Modal from "react-modal";
 import "./PostModal.css";
-import {IPost} from "../../interface/IPost"
-interface EditPostModalProps {
-    post: IPost;
-    isOpen: boolean;
-    onClose: () => void;
-    onSave: (id: number, title: string, body: string) => void;
-}
+import {IEditPostModalProps} from "../../interface/IEditPostModalProps";
 
-
-function EditPostModal({ post, isOpen, onClose, onSave }: EditPostModalProps) {
-    const [id, setId] = useState(post.id);
+function EditPostModal({ post, isOpen, onClose, onSave }: IEditPostModalProps) {
     const [title, setTitle] = useState(post.title);
     const [body, setBody] = useState(post.body);
 
@@ -23,8 +15,8 @@ function EditPostModal({ post, isOpen, onClose, onSave }: EditPostModalProps) {
         setBody(event.target.value);
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        onSave(id, title, body);
+    const handleSubmit = () => {
+        onSave(post.id, title, body);
         onClose();
     };
 

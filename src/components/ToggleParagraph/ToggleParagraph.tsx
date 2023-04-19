@@ -1,14 +1,11 @@
 import React, {useState} from "react";
-
-interface ToggleParagraphProps {
-    text: string;
-}
+import {ToggleParagraphProps} from "../../interface/IToggleParagraphProps";
 
 function ToggleParagraph({ text }: ToggleParagraphProps) {
     const [isVisible, setIsVisible] = useState(true);
 
     const toggleVisibility = () => {
-        setIsVisible(!isVisible);
+        setIsVisible(prevIsVisible => !prevIsVisible);
     };
 
     return (

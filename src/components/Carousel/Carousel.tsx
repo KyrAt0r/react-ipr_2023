@@ -1,18 +1,18 @@
 import React, {useState} from "react";
 
-interface CarouselProps {
+interface ICarouselProps {
     images: string[];
 }
 
-function Carousel({ images }: CarouselProps) {
+function Carousel({ images }: ICarouselProps) {
     const [index, setIndex] = useState(0);
 
     const nextImage = () => {
-        setIndex((index + 1) % images.length);
+        setIndex((prevIndex) => (prevIndex + 1) % images.length);
     };
 
     const prevImage = () => {
-        setIndex((index - 1 + images.length) % images.length);
+        setIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
     };
 
     return (

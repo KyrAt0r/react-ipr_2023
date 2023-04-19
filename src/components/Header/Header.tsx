@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import './Header.css';
 import UserInfo from "../UserInfo/UserInfo";
 
-interface HeaderProps {
+interface IHeaderProps {
     logoSrc: string;
     siteName: string;
 }
 
-class Header extends Component<HeaderProps> {
+class Header extends Component<IHeaderProps> {
     render() {
         const {logoSrc, siteName} = this.props;
 

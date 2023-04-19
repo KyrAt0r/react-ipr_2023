@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-interface InputTextProps {
+interface IInputTextProps {
     min?: number;
     max?: number;
 }
 
-function InputText({ max, min }: InputTextProps) {
+function InputText({ max, min }: IInputTextProps) {
     const [value, setValue] = useState('');
     const [showErrorMin, setShowErrorMin] = useState(false);
     const [showErrorMax, setShowErrorMax] = useState(false)
@@ -16,10 +16,8 @@ function InputText({ max, min }: InputTextProps) {
 
         if (min && newValue.length < min) {
             setShowErrorMin(true);
-            setShowErrorMax(false);
         } else if (max && newValue.length > max) {
             setShowErrorMax(true);
-            setShowErrorMin(false);
         } else {
             setShowErrorMin(false);
             setShowErrorMax(false);
